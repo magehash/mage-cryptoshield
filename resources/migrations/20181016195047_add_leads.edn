@@ -1,0 +1,3 @@
+[{:db/col :lead/url :db/type "text" :db/nil? false}
+ {:db/col :lead/email :db/type "text" :db/nil? false}
+ {:db/constraint [:lead/url :lead/email] :db/type "unique"}]

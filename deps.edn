@@ -1,0 +1,40 @@
+{:paths ["src" "resources"]
+ :deps
+ {org.clojure/clojure {:mvn/version "1.9.0"}
+  coast-framework/coast.eta {:mvn/version "1.0.4"}
+  com.draines/postal {:mvn/version "2.0.2"}
+  stylefruits/gniazdo {:mvn/version "1.0.1"}
+  org.clojure/core.async {:mvn/version "0.4.474"}}
+
+ :mvn/repos {"central" {:url "https://repo1.maven.org/maven2/"}
+             "clojars" {:url "https://repo.clojars.org/"}}
+
+ :aliases
+ {:test
+  {:extra-paths ["test"]
+   :main-opts ["-m" "cognitect.test-runner"]
+   :extra-deps
+   {com.cognitect/test-runner {:git/url "git@github.com:cognitect-labs/test-runner"
+                               :sha "5f2b5c2efb444df76fb5252102b33f542ebf7f58"}}}
+
+  :uberjar
+  {:main-opts ["-m" "cambada.uberjar"
+               "-m" "server"
+               "--app-version" "1.0.0"
+               "--app-artifact-id" "crypto-miner-shield"]
+   :extra-deps
+   {luchiniatwork/cambada {:mvn/version "1.0.0"}}}
+
+  :repl {:extra-deps {nrepl {:mvn/version "0.4.2"}}}
+
+  :db/rollback
+  {:main-opts ["-m" "coast.cli" "db:rollback"]}
+
+  :db/migrate
+  {:main-opts ["-m" "coast.cli" "db:migrate"]}
+
+  :db/create
+  {:main-opts ["-m" "coast.cli" "db:create" "crypto-miner-shield"]}
+
+  :db/drop
+  {:main-opts ["-m" "coast.cli" "db:drop" "crypto-miner-shield"]}}}

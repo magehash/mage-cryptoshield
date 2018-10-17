@@ -1,0 +1,7 @@
+Hey there,
+
+It's the team from magehash crypto alerts, we noticed :url has a script tag matching a domain on our list of crypto miner scripts:
+
+:scripts
+
+If you added this miner on purpose, feel free to ignore this email

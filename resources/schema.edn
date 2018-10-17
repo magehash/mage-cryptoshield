@@ -1,0 +1,9 @@
+{:lead/url #:db{:type "text", :nil? false},
+ :lead/email #:db{:type "text", :nil? false},
+ [:lead/url :lead/email] #:db{:type "unique"},
+ :rels #{},
+ :cols #{:lead/email :lead/url},
+ :idents #{:lead/id},
+ :constraints
+ #{#:db{:constraint [:lead/url :lead/email], :type "unique"}},
+ :joins {}}

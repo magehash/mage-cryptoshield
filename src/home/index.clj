@@ -229,5 +229,5 @@
     (if (and (nil? v-errors)
              (nil? db-errors))
       (-> (redirect (url-for :home.index/view))
-          (flash "Thanks for supporting your local indie makers!"))
+          (flash "We'll keep an eye on your website! Thanks for supporting your local indie makers!"))
       (view (merge request v-errors db-errors)))))
